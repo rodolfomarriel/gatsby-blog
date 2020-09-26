@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { TweenMax, Power3, Power1 } from 'gsap'
 
 import * as S from './styled'
-// import {ReactComponent as Octopus} from './animate.svg'
 
 const Page404 = () => {
   useEffect(() => {
@@ -127,7 +126,7 @@ const Page404 = () => {
     <S.Animate>
       <S.Titulo>Ops...não tem nada aqui</S.Titulo>
       <S.ButtonLink to="/" cover duration={0.6} title="Voltar para Home">
-        Voltar para site
+        Voltar para Home
       </S.ButtonLink>
       <svg
         xmlns="http://www.w3.org/2000/svg"
