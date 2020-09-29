@@ -6,13 +6,6 @@ import * as S from './styled'
 
 const Page404 = () => {
   useEffect(() => {
-    TweenMax.to('h1', 1, {
-      alpha: 1,
-      y: 20,
-      yoyo: true,
-      ease: Power3.easeInOut,
-    })
-
     TweenMax.staggerTo(
       '#water path',
       2,
@@ -128,6 +121,7 @@ const Page404 = () => {
       <S.ButtonLink to="/" cover duration={0.6} title="Voltar para Home">
         Voltar para Home
       </S.ButtonLink>
+      <S.NumeroErro>404</S.NumeroErro>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1226.887px"

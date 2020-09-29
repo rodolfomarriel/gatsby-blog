@@ -15,15 +15,27 @@ export const Animate = styled.section`
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     z-index: -1;
 
+    ${media.greaterThan('large')`
+      height: 100%;
+      width: 100%;
+    `}
+
     ${media.lessThan('large')`
-      top: 24vh
+      /* height: 100%;
+      width: 100%; */
+      top: 24vh;
+    `}
+
+    ${media.between('800px', '1024px')`
+      height: 100%;
+      width: 100%;
     `}
 
     ${media.lessThan('small')`
+      height: 100%;
+      margin-top: -30vh;
       top: 34vh
     `}
   }
@@ -51,3 +63,15 @@ export const ButtonLink = styled(AniLink)`
     color: ${shade(0.1, '#00B6FF')};
   }
 `
+export const NumeroErro = styled.section`
+  font-size: 4em;
+  font-weight: 700;
+  color: #2D3965;
+  margin: 2em 0;
+  display: flex;
+  justify-content: center;
+
+  ${media.greaterThan('large')`
+    display: none;
+  `}
+`;
