@@ -47,6 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
             image
           }
           timeToRead
+          id
         }
         next {
           frontmatter {

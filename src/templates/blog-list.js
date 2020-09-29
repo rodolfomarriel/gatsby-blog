@@ -27,10 +27,12 @@ const BlogList = props => {
             node: {
               frontmatter: { background, category, date, description, title },
               timeToRead,
+              id,
               fields: { slug },
             },
           }) => (
             <PostItem
+              key={id}
               slug={slug}
               background={background}
               category={category}
@@ -75,6 +77,7 @@ export const query = graphql`
             title
           }
           timeToRead
+          id
         }
       }
     }
