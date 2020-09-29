@@ -124,7 +124,7 @@ const Page404 = () => {
 
   return (
     <S.Animate>
-      <S.Titulo>Ops...não tem nada aqui</S.Titulo>
+      <S.Titulo>Ops...nada aqui</S.Titulo>
       <S.ButtonLink to="/" cover duration={0.6} title="Voltar para Home">
         Voltar para Home
       </S.ButtonLink>
