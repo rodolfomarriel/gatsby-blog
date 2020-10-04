@@ -117,9 +117,9 @@ const Page404 = () => {
 
   return (
     <S.Animate>
-      <S.Titulo>Ops...nada aqui</S.Titulo>
+      <S.Titulo>Ops...nada aqui!</S.Titulo>
       <S.ButtonLink to="/" cover duration={0.6} title="Voltar para Home">
-        Voltar para Home
+        Voltar para o Blog
       </S.ButtonLink>
       <S.NumeroErro>404</S.NumeroErro>
       <svg
