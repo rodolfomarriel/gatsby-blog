@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
-import { Home } from '@styled-icons/boxicons-solid/Home'
+import { Profile } from '@styled-icons/icomoon/Profile'
 import { SearchAlt2 as Search } from '@styled-icons/boxicons-regular/SearchAlt2'
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
 import { LightBulb as Light } from '@styled-icons/entypo/LightBulb'
 import { Grid } from '@styled-icons/entypo/Grid'
 import { ThList as List } from '@styled-icons/typicons/ThList'
+import { LayoutTextSidebarReverse } from '@styled-icons/bootstrap/LayoutTextSidebarReverse'
 
-import getThemeColor from "../../utils/getThemeColor"
+import getThemeColor from '../../utils/getThemeColor'
 
 import * as S from './styled'
 
@@ -16,7 +17,7 @@ const MenuBar = () => {
   const [display, setDisplay] = useState(null)
 
   const isDarkMode = theme === 'dark'
-  const isListMode = display === "list"
+  const isListMode = display === 'list'
 
   useEffect(() => {
     setTheme(window.__theme)
@@ -29,8 +30,8 @@ const MenuBar = () => {
   return (
     <S.MenuBarWrapper>
       <S.MenuBarGroup>
-      <S.MenuBarLink
-          to="/"
+        <S.MenuBarLink
+          to="http://rodolfomarriel.me"
           cover
           direction="right"
           bg={getThemeColor()}
@@ -38,7 +39,19 @@ const MenuBar = () => {
           title="Voltar para Home"
         >
           <S.MenuBarItem>
-            <Home />
+            <Profile />
+          </S.MenuBarItem>
+        </S.MenuBarLink>
+        <S.MenuBarLink
+          to="/"
+          cover
+          direction="right"
+          bg={getThemeColor()}
+          duration={0.6}
+          title="Pagina de noticias"
+        >
+          <S.MenuBarItem>
+            <LayoutTextSidebarReverse />
           </S.MenuBarItem>
         </S.MenuBarLink>
         <S.MenuBarLink
@@ -59,6 +72,14 @@ const MenuBar = () => {
           title="Mudar o tema"
           onClick={() => {
             window.__setPreferredTheme(isDarkMode ? 'light' : 'dark')
+
+            if (window.DISQUS !== undefined) {
+              window.setTimeout(() => {
+                window.DISQUS.reset({
+                  reload: true,
+                })
+              }, 300)
+            }
           }}
           className={theme}
         >
@@ -67,16 +88,18 @@ const MenuBar = () => {
         <S.MenuBarItem
           title="Mudar visualização"
           onClick={() => {
-            window.__setPreferredDisplay(isListMode ? "grid" : "list")
+            window.__setPreferredDisplay(isListMode ? 'grid' : 'list')
           }}
           className="display"
         >
           {isListMode ? <Grid /> : <List />}
         </S.MenuBarItem>
-        <S.MenuBarItem title="Ir para o Topo"
-        onClick={() => {
-          window.scroll({ top: 0, behavior: 'smooth' })
-        }}>
+        <S.MenuBarItem
+          title="Ir para o Topo"
+          onClick={() => {
+            window.scroll({ top: 0, behavior: 'smooth' })
+          }}
+        >
           <Arrow />
         </S.MenuBarItem>
       </S.MenuBarGroup>

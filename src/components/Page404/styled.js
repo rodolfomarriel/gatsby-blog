@@ -5,13 +5,14 @@ import media from 'styled-media-query'
 
 export const Animate = styled.section`
   body {
+
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
 
   svg {
-    background: var(--background);
+    /* background: #00B6FF; */
     position: fixed;
     bottom: 0;
     left: 0;

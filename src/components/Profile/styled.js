@@ -1,26 +1,19 @@
 import styled from 'styled-components'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+// import AniLink from "gatsby-plugin-transition-link/AniLink"
 import media from "styled-media-query"
 
 export const ProfileWrapper = styled.section`
-  color: var(--texts);
+  color: #e6e6e6;
   display: flex;
   flex-direction: column;
-`
-
-export const ProfileLink = styled(AniLink)`
-  color: var(--texts);
-  text-decoration: none;
-  transition: color 0.5s;
+  font-family: 'Roboto', sans-serif;
 
   ${media.lessThan("large")`
-    display: flex;
-    text-align: left;
+    padding: 3.5rem;
   `}
+`
 
-  &:hover {
-    color: var(--highlight);
-  }
+export const ProfileApresentation = styled.section`
 `
 
 export const ProfileAuthor = styled.h1`
@@ -49,7 +42,7 @@ export const ProfileDescription = styled.p`
   font-weight: 300;
   line-height: 1.4;
 
-  ${media.lessThan("large")`
+  /* ${media.lessThan("large")`
     display: none;
-  `}
+  `} */
 `

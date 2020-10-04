@@ -31,45 +31,48 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
-  {
-    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
-      edges {
-        node {
-          fields {
-            slug
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: frontmatter___date }
+        filter: { fileAbsolutePath: { regex: "/posts/" } }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              background
+              category
+              date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+              description
+              title
+              image
+            }
+            timeToRead
+            id
           }
-          frontmatter {
-            background
-            category
-            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-            description
-            title
-            image
+          next {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
           }
-          timeToRead
-          id
-        }
-        next {
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
-        previous {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
           }
         }
       }
     }
-  }
   `).then((result) => {
-    const posts = result.data.allMarkdownRemark.edges;
+    const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach(({ node, next, previous }) => {
       createPage({
@@ -83,10 +86,10 @@ exports.createPages = ({ graphql, actions }) => {
           nextPost: previous,
         },
       })
-    });
+    })
 
-    const postsPerPage = 6;
-    const numPages = Math.ceil(posts.length / postsPerPage);
+    const postsPerPage = 6
+    const numPages = Math.ceil(posts.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
@@ -96,9 +99,9 @@ exports.createPages = ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: index * postsPerPage,
           numPages,
-          currentPage: index + 1
-        }
+          currentPage: index + 1,
+        },
       })
-    });
+    })
   })
 }

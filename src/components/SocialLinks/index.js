@@ -5,7 +5,6 @@ import links from './content'
 
 import * as S from './styled'
 
-
 const SocialLinks = () => (
   <S.SocialLinksWrapper>
     <S.SocialLinksList>
@@ -17,7 +16,7 @@ const SocialLinks = () => (
             <S.SocialLinksLink
               href={link.url}
               title={link.label}
-              target="_blank"
+              target={link.target}
               rel="noopener noreferrer"
             >
               <S.IconWrapper>

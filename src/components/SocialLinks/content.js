@@ -1,26 +1,33 @@
-const handle = 'johndoe'
+const handleGithub = 'rodolfomarriel'
+// const handleTwitter = 'rodolfomarriel'
+const handleInstagram = 'rodmarriel'
+const handleLinkedin = 'rodolfo-marriel-a8876286'
 
 const links = [
   {
     label: "Github",
-    url: `https://github.com/${handle}`,
-  },
-  {
-    label: "Twitter",
-    url: `https://twitter.com/${handle}`,
+    target: "_blank",
+    url: `https://github.com/${handleGithub}`,
   },
   // {
-  //   label: "Youtube",
-  //   url: `https://www.youtube.com/${handle}`,
+  //   label: "Twitter",
+  //   url: `https://twitter.com/${handle}`,
   // },
   {
     label: "Instagram",
-    url: `https://www.instagram.com/${handle}`,
+    target: "_blank",
+    url: `https://www.instagram.com/${handleInstagram}`,
   },
-  // {
-  //   label: "Unsplash",
-  //   url: `https://unsplash.com/${handle}`,
-  // },
+  {
+    label: "Linkedin",
+    target: "_blank",
+    url: `https://www.linkedin.com/in/${handleLinkedin}`,
+  },
+  {
+    label: "Blog",
+    target: "_self",
+    url: `/blog/`,
+  },
 ]
 
 export default links

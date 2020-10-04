@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from "styled-media-query"
+import media from 'styled-media-query'
 
 import transitions from '../../styles/transitions'
 
@@ -14,7 +14,7 @@ export const LayoutWrapper = styled.section`
 export const LayoutMain = styled.main`
   background: var(--background);
   min-height: 100vh;
-  padding: 0 3.75rem 0 20rem;
+  padding: 3.75rem 15rem;
   transition: ${transitions.DEFAULT};
   width: 100%;
 

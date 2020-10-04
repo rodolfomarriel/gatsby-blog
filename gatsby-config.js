@@ -4,9 +4,9 @@ const queries = require('./src/utils/algolia_queries')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog`,
-    position: `Programador Fullstack`,
-    description: `A blog about Fullstack development and other cool stuff`,
+    title: `Rodolfo Marriel`,
+    position: `Desenvolvedor`,
+    description: `Aprender para evoluir sempre`,
     author: `@rodolfom`,
     siteUrl: `https://blog.rodolfomarriel.me/`,
   },
@@ -78,8 +78,8 @@ module.exports = {
         name: `DevBlog Rodolfo Marriel`,
         short_name: `DevBlog`,
         start_url: `/`,
-        background_color: `#16202c`,
-        theme_color: `#16202c`,
+        background_color: `#202020`,
+        theme_color: `#202020`,
         display: `minimal-ui`,
         //icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
