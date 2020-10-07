@@ -2,7 +2,6 @@ backend:
   name: github
   repo: rodolfomarriel/gatsby-blog
   branch: master # Branch to update (optional; defaults to master)
-  site_domain: https://blog.rodolfomarriel.me/
 
 publish_mode: editorial_workflow
 media_folder: "static/assets/img"
