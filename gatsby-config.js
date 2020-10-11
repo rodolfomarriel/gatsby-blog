@@ -73,13 +73,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        // replace `UA-XXXXXXXXX-X` with your own Google Analytics Tracking ID
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `DevBlog Rodolfo Marriel`,
