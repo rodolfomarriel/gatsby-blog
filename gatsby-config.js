@@ -62,15 +62,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-algolia-search`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
-        queries,
-        chunkSize: 10000, // default: 1000
-        enablePartialUpdates: true, // default: false
-      },
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        head: false
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -88,6 +84,17 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-algolia-search`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
+        enablePartialUpdates: true, // default: false
+      },
+    },
   ],
 }

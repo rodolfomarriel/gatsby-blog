@@ -8,8 +8,8 @@ const postQuery = `{
         }
         frontmatter {
           title
-          background
           category
+          background
           date_timestamp: date
           date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
           description
@@ -34,7 +34,7 @@ const queries = [
   {
     query: postQuery,
     transformer: ({ data }) => flatten(data.posts.edges),
-    indexName: `dev_POSTS`,
+    indexName: `prod_POSTS`,
     settings,
   },
 ]
